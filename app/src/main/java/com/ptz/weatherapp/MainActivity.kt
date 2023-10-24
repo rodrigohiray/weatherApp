@@ -3,12 +3,18 @@ package com.ptz.weatherapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.tooling.preview.Preview
 import com.ptz.weatherapp.ui.theme.WeatherAppTheme
 
@@ -22,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    HomeScreen()
                 }
             }
         }
@@ -44,3 +50,45 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+@Preview(showBackground = true, widthDp = 390, heightDp = 800)
+@Composable
+fun HomeScreen()
+{
+    Column() {
+        NavigationSearchComponent()
+        WelcomeMessageComponent()
+        ImagePreviewComponent()
+        SevenDaysForecastComponent()
+    }
+}
+
+@Preview(showBackground = true , widthDp = 390)
+@Composable
+fun NavigationSearchComponent(): Unit {
+    Row (modifier = Modifier.fillMaxWidth().padding(15.dp),
+        Text(text = "Barra Navegação")
+        Text(text = "Barra Navegação")
+    }
+
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WelcomeMessageComponent(): Unit {
+    Text(text = "Mensagem Boas Vindas")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ImagePreviewComponent(): Unit {
+    Text(text = "Imagem")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SevenDaysForecastComponent(): Unit {
+    Text(text = "Previsão 7 dias")
+}
+
+
+
