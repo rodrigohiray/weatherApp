@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ModifierInfo
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.ptz.weatherapp.ui.theme.WeatherAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -66,6 +67,7 @@ fun HomeScreen()
 @Composable
 fun NavigationSearchComponent(): Unit {
     Row (modifier = Modifier.fillMaxWidth().padding(15.dp),
+
         Text(text = "Barra Navegação")
         Text(text = "Barra Navegação")
     }
